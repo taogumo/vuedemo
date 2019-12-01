@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <p>{{msg}},新学习知识{{msg1}}</p>
+    <a href="{{url}}">asdfadsfadf</a>
+    <button onclick="vm.show1()">测试</button>
+    <div v-html='template'></div>
+</div>
+<script>
+    var vm = new Vue({
+        el: '#app',//当前我们Vue实例 要控制的标签
+        data: {//数据
+            msg: 'hello word', //可以通过Vue直接渲染
+            msg1: "hello,vue",
+            template:'<div>hello,baidu</div>',
+            url:"www.baidu.com"
+        },
+        created:function(){
+            // alert("已创建")
+        },
+        methods:{
+            show:function () {
+                alert("show")
+            },
+            show1:function () {
+                alert("show1")
+            }
+        }
+    });
+    // alert(vm.$data.msg)
+</script>
+</body>
+</html>

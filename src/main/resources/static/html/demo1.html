@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+  <input v-model="message">
+    <soft863 v-bind:msg="message"></soft863>
+</div>
+<script>
+    Vue.component("soft863", {
+        props:['msg'],
+        template: '<h1>这是自定{{msg}}义组件</h1>'
+    });
+    new Vue({
+        el: '#app',
+        data: {//数据
+            message: 'soft863'
+        }
+    });
+</script>
+</body>
+</html>
